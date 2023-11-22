@@ -7,7 +7,7 @@ export const Whoami = () => {
   const titleText = ['Whoami'];
 
   const { ref: refWhoamiTitle, inView: inViewWhoamiTitle } = useInView({
-    threshold: 1,
+    threshold: 0.5,
     trackVisibility: true,
     delay: 100,
   });
@@ -61,12 +61,12 @@ export const Whoami = () => {
     [refPreDescriptionDesktop],
   );
 
-  const appendLettersSpeed = 10;
-  const removeLettersSpeed = 2;
+  const appendLettersSpeed = 15;
+  const removeLettersSpeed = 5;
 
   const description = [
-    'As a dedicated and highly skilled software engineer, I bring a wealth of experience and expertise in building cutting-edge web applications and digital solutions. My passion for web development and continuous learning has led me to excel in a wide range of technologies and methodologies. <br/><br/> With a strong foundation in both front-end and back-end development, I am committed to delivering high-quality, performant, and scalable software solutions.',
-    `When I'm not weaving code spells, I'm strumming the electric guitar, indulging in my passion for music. So that's a bit about me - a software engineer with a love for technology, and a musical side eager for learning new things.`,
+    'I am a seasoned professional with a wealth of experience and profound expertise in crafting cutting-edge web applications and digital solutions. <p class="mb-6"></p> My dedication to the field of web development has driven me to continuously expand my knowledge, resulting in mastery across various technologies and successful project executions.',
+    `I'd be delighted to connect and explore potential opportunities if you're seeking a passionate and proficient software developer who can deliver robust and efficient solutions. <p class="mb-6"></p> Let's create exceptional software together!`,
   ];
 
   const { ref: refDescriptionDesktop, inView: inViewDescriptionDesktop } =
@@ -84,6 +84,7 @@ export const Whoami = () => {
         removeLettersSpeed,
         waitingTimeBeforeNextMessage: 14000,
         waitTimeBeforeNextMessageBeforeLoop: 12000,
+        waitingTimeBeforeStartMessage: 0,
         infinite: true,
       },
       inViewDescriptionDesktop,
@@ -99,10 +100,22 @@ export const Whoami = () => {
 
   const { ref: refDescriptionMobile, inView: inViewDescriptionMobile } =
     useInView({
-      threshold: 0,
+      threshold: 0.5,
       trackVisibility: true,
       delay: 100,
     });
+
+  const elementToAppendPreDescriptionMobile =
+    useMatrixifyAnimation<HTMLHeadingElement>(
+      preDescriptionText,
+      {
+        waitingTimeBeforeNextMessage: 0,
+        appendLettersSpeed: 20,
+        removeLettersSpeed: 5,
+        infinite: false,
+      },
+      inViewDescriptionMobile,
+    );
 
   const elementToAppendDescriptionMobile =
     useMatrixifyAnimation<HTMLSpanElement>(
@@ -113,17 +126,6 @@ export const Whoami = () => {
         waitingTimeBeforeNextMessage: 14000,
         waitTimeBeforeNextMessageBeforeLoop: 12000,
         infinite: true,
-      },
-      inViewDescriptionMobile,
-    );
-
-  const elementToAppendPreDescriptionMobile =
-    useMatrixifyAnimation<HTMLHeadingElement>(
-      preDescriptionText,
-      {
-        appendLettersSpeed: 20,
-        removeLettersSpeed: 5,
-        infinite: false,
       },
       inViewDescriptionMobile,
     );
@@ -150,13 +152,13 @@ export const Whoami = () => {
             ref={setRefPreDescriptionDesktop}
             className={`${
               !inViewWhoamiTitle ? 'block' : 'hidden'
-            } z-10 animate-fade-right-to-left overflow-x-hidden px-10 pb-4 pt-6 text-2xl font-bold text-green-500`}
+            } z-10 overflow-x-hidden px-10 pb-4 pt-6 text-2xl font-bold text-green-500`}
           ></h2>
           <span
             ref={setRefDescriptionDesktop}
             className={`${
               !inViewWhoamiTitle ? 'block' : 'hidden'
-            } z-10 animate-fade-right-to-left-longer overflow-x-hidden px-10 text-2xl text-green-500 shadow-green-500`}
+            } z-10 overflow-x-hidden px-10 text-2xl text-green-500 shadow-green-500`}
           ></span>
         </div>
       </div>
@@ -168,13 +170,13 @@ export const Whoami = () => {
           ref={elementToAppendPreDescriptionMobile}
           className={`${
             inViewDescriptionMobile ? 'block' : 'hidden'
-          } z-10 animate-fade-bottom-to-top overflow-x-hidden px-10 pb-4 pt-6 text-center text-4xl font-bold text-green-500 lg:animate-fade-right-to-left`}
+          } z-10 overflow-x-hidden px-10 pb-4 pt-6 text-center text-4xl font-bold text-green-500`}
         ></h2>
         <span
           ref={elementToAppendDescriptionMobile}
           className={`${
             inViewDescriptionMobile ? 'block' : 'hidden'
-          } z-10 animate-fade-bottom-to-top overflow-x-hidden px-10 pb-6 text-center text-2xl text-green-500 shadow-green-500 lg:animate-fade-right-to-left-longer`}
+          } z-10 overflow-x-hidden px-10 pb-6 text-center text-2xl text-green-500 shadow-green-500`}
         ></span>
       </div>
     </>

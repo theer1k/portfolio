@@ -9,7 +9,7 @@ export const Skillset = () => {
   const titleText = ['Skillset/tools'];
 
   const { ref: refTitle, inView: inViewTitle } = useInView({
-    threshold: 0,
+    threshold: 0.6,
     trackVisibility: true,
     delay: 100,
   });

@@ -8,13 +8,13 @@ import { useMatrixifyAnimation } from '@/presentation/hooks/useMatrixifyAnimatio
 
 export const Footer = () => {
   const { ref: refFooter, inView: inViewFooter } = useInView({
-    threshold: 0.15,
+    threshold: 0.5,
     trackVisibility: true,
     delay: 100,
   });
 
   const { ref: refFooterBaseBoard, inView: inViewFooterBaseBoard } = useInView({
-    threshold: 0.15,
+    threshold: 0.5,
     trackVisibility: true,
     delay: 100,
   });
@@ -260,7 +260,9 @@ export const Footer = () => {
                   alt="LinkedIn Logo"
                   width="0"
                   height="0"
-                  className="h-7 w-7"
+                  className={`${
+                    inViewFooter ? 'visible animate-fade-in' : 'invisible'
+                  } h-7 w-7`}
                   quality={100}
                 />
               </a>
@@ -286,7 +288,9 @@ export const Footer = () => {
                   alt="Email Logo"
                   width="20"
                   height="20"
-                  className="h-7 w-7"
+                  className={`${
+                    inViewFooter ? 'visible animate-fade-in' : 'invisible'
+                  } h-7 w-7`}
                   quality={100}
                 />
               </a>
@@ -312,7 +316,9 @@ export const Footer = () => {
                   alt="Youtube Logo"
                   width="0"
                   height="0"
-                  className="h-7 w-7"
+                  className={`${
+                    inViewFooter ? 'visible animate-fade-in' : 'invisible'
+                  } h-7 w-7`}
                   quality={100}
                 />
               </a>
@@ -338,7 +344,9 @@ export const Footer = () => {
                   alt="GitHub Logo"
                   width="0"
                   height="0"
-                  className="h-7 w-7"
+                  className={`${
+                    inViewFooter ? 'visible animate-fade-in' : 'invisible'
+                  } h-7 w-7`}
                   quality={100}
                 />
               </a>
@@ -416,7 +424,9 @@ export const Footer = () => {
                 alt="LinkedIn Logo"
                 width="0"
                 height="0"
-                className="h-7 w-7"
+                className={`${
+                  inViewFooter ? 'visible animate-fade-in' : 'invisible'
+                } h-7 w-7`}
                 quality={100}
               />
             </a>
@@ -431,7 +441,9 @@ export const Footer = () => {
                 alt="Email Logo"
                 width="0"
                 height="0"
-                className="h-7 w-7"
+                className={`${
+                  inViewFooter ? 'visible animate-fade-in' : 'invisible'
+                } h-7 w-7`}
                 quality={100}
               />
             </a>
@@ -446,7 +458,9 @@ export const Footer = () => {
                 alt="Youtube Logo"
                 width="0"
                 height="0"
-                className="h-7 w-7"
+                className={`${
+                  inViewFooter ? 'visible animate-fade-in' : 'invisible'
+                } h-7 w-7`}
                 quality={100}
               />
             </a>
@@ -461,7 +475,9 @@ export const Footer = () => {
                 alt="Twitter Logo"
                 width="0"
                 height="0"
-                className="h-7 w-7"
+                className={`${
+                  inViewFooter ? 'visible animate-fade-in' : 'invisible'
+                } h-7 w-7`}
                 quality={100}
               />
             </a>
@@ -476,7 +492,9 @@ export const Footer = () => {
                 alt="HackerRank Logo"
                 width="0"
                 height="0"
-                className="h-7 w-7"
+                className={`${
+                  inViewFooter ? 'visible animate-fade-in' : 'invisible'
+                } h-7 w-7`}
                 quality={100}
               />
             </a>
@@ -491,7 +509,9 @@ export const Footer = () => {
                 alt="GitHub Logo"
                 width="0"
                 height="0"
-                className="h-7 w-7"
+                className={`${
+                  inViewFooter ? 'visible animate-fade-in' : 'invisible'
+                } h-7 w-7`}
                 quality={100}
               />
             </a>
@@ -506,7 +526,9 @@ export const Footer = () => {
                 alt="Dev.to Logo"
                 width="0"
                 height="0"
-                className="h-7 w-7"
+                className={`${
+                  inViewFooter ? 'visible animate-fade-in' : 'invisible'
+                } h-7 w-7`}
                 quality={100}
               />
             </a>

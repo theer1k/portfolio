@@ -22,7 +22,6 @@ export const Experiences = () => {
   const elementToAppendTitle = useMatrixifyAnimation<HTMLHeadingElement>(
     experiencesText,
     {
-      waitingTimeBeforeStartMessage: 0,
       waitingTimeBeforeNextMessage: 0,
       appendLettersSpeed: 50,
       removeLettersSpeed: 0,
@@ -83,7 +82,6 @@ export const Experiences = () => {
   const elementToAppendDate1 = useMatrixifyAnimation<HTMLHeadingElement>(
     [experience1.when],
     {
-      waitingTimeBeforeStartMessage: 0,
       waitingTimeBeforeNextMessage: 0,
       appendLettersSpeed: 150,
       removeLettersSpeed: 0,
@@ -95,7 +93,6 @@ export const Experiences = () => {
   const elementToAppendPosition1 = useMatrixifyAnimation<HTMLHeadingElement>(
     [experience1.position],
     {
-      waitingTimeBeforeStartMessage: 0,
       waitingTimeBeforeNextMessage: 0,
       appendLettersSpeed: 25,
       removeLettersSpeed: 0,
@@ -107,7 +104,6 @@ export const Experiences = () => {
   const elementToAppendCompany1 = useMatrixifyAnimation<HTMLHeadingElement>(
     [experience1.company],
     {
-      waitingTimeBeforeStartMessage: 0,
       waitingTimeBeforeNextMessage: 0,
       appendLettersSpeed: 25,
       removeLettersSpeed: 0,
@@ -127,7 +123,6 @@ export const Experiences = () => {
   const elementToAppendDate2 = useMatrixifyAnimation<HTMLHeadingElement>(
     [experience2.when],
     {
-      waitingTimeBeforeStartMessage: 0,
       waitingTimeBeforeNextMessage: 0,
       appendLettersSpeed: 150 + 10,
       removeLettersSpeed: 0,
@@ -139,7 +134,6 @@ export const Experiences = () => {
   const elementToAppendPosition2 = useMatrixifyAnimation<HTMLHeadingElement>(
     [experience2.position],
     {
-      waitingTimeBeforeStartMessage: 0,
       waitingTimeBeforeNextMessage: 0,
       appendLettersSpeed: 25 + 10,
       removeLettersSpeed: 0,
@@ -151,7 +145,6 @@ export const Experiences = () => {
   const elementToAppendCompany2 = useMatrixifyAnimation<HTMLHeadingElement>(
     [experience2.company],
     {
-      waitingTimeBeforeStartMessage: 0,
       waitingTimeBeforeNextMessage: 0,
       appendLettersSpeed: 25 + 10,
       removeLettersSpeed: 0,
@@ -171,7 +164,6 @@ export const Experiences = () => {
   const elementToAppendDate3 = useMatrixifyAnimation<HTMLHeadingElement>(
     [experience3.when],
     {
-      waitingTimeBeforeStartMessage: 0,
       waitingTimeBeforeNextMessage: 0,
       appendLettersSpeed: 150 + 20,
       removeLettersSpeed: 0,
@@ -183,7 +175,6 @@ export const Experiences = () => {
   const elementToAppendPosition3 = useMatrixifyAnimation<HTMLHeadingElement>(
     [experience3.position],
     {
-      waitingTimeBeforeStartMessage: 0,
       waitingTimeBeforeNextMessage: 0,
       appendLettersSpeed: 25 + 20,
       removeLettersSpeed: 0,
@@ -195,7 +186,6 @@ export const Experiences = () => {
   const elementToAppendCompany3 = useMatrixifyAnimation<HTMLHeadingElement>(
     [experience3.company],
     {
-      waitingTimeBeforeStartMessage: 0,
       waitingTimeBeforeNextMessage: 0,
       appendLettersSpeed: 25 + 20,
       removeLettersSpeed: 0,
@@ -215,7 +205,6 @@ export const Experiences = () => {
   const elementToAppendDate4 = useMatrixifyAnimation<HTMLHeadingElement>(
     [experience4.when],
     {
-      waitingTimeBeforeStartMessage: 0,
       waitingTimeBeforeNextMessage: 0,
       appendLettersSpeed: 150 + 30,
       removeLettersSpeed: 0,
@@ -227,7 +216,6 @@ export const Experiences = () => {
   const elementToAppendPosition4 = useMatrixifyAnimation<HTMLHeadingElement>(
     [experience4.position],
     {
-      waitingTimeBeforeStartMessage: 0,
       waitingTimeBeforeNextMessage: 0,
       appendLettersSpeed: 25 + 30,
       removeLettersSpeed: 0,
@@ -239,7 +227,6 @@ export const Experiences = () => {
   const elementToAppendCompany4 = useMatrixifyAnimation<HTMLHeadingElement>(
     [experience4.company],
     {
-      waitingTimeBeforeStartMessage: 0,
       waitingTimeBeforeNextMessage: 0,
       appendLettersSpeed: 25 + 30,
       removeLettersSpeed: 0,
@@ -259,7 +246,6 @@ export const Experiences = () => {
   const elementToAppendDate5 = useMatrixifyAnimation<HTMLHeadingElement>(
     [experience5.when],
     {
-      waitingTimeBeforeStartMessage: 0,
       waitingTimeBeforeNextMessage: 0,
       appendLettersSpeed: 150 + 40,
       removeLettersSpeed: 0,
@@ -271,7 +257,6 @@ export const Experiences = () => {
   const elementToAppendPosition5 = useMatrixifyAnimation<HTMLHeadingElement>(
     [experience5.position],
     {
-      waitingTimeBeforeStartMessage: 0,
       waitingTimeBeforeNextMessage: 0,
       appendLettersSpeed: 25 + 40,
       removeLettersSpeed: 0,
@@ -283,7 +268,6 @@ export const Experiences = () => {
   const elementToAppendCompany5 = useMatrixifyAnimation<HTMLHeadingElement>(
     [experience5.company],
     {
-      waitingTimeBeforeStartMessage: 0,
       waitingTimeBeforeNextMessage: 0,
       appendLettersSpeed: 25 + 40,
       removeLettersSpeed: 0,
@@ -303,7 +287,6 @@ export const Experiences = () => {
   const elementToAppendDate6 = useMatrixifyAnimation<HTMLHeadingElement>(
     [experience6.when],
     {
-      waitingTimeBeforeStartMessage: 0,
       waitingTimeBeforeNextMessage: 0,
       appendLettersSpeed: 150 + 50,
       removeLettersSpeed: 0,
@@ -315,7 +298,6 @@ export const Experiences = () => {
   const elementToAppendPosition6 = useMatrixifyAnimation<HTMLHeadingElement>(
     [experience6.position],
     {
-      waitingTimeBeforeStartMessage: 0,
       waitingTimeBeforeNextMessage: 0,
       appendLettersSpeed: 25 + 50,
       removeLettersSpeed: 0,
@@ -327,7 +309,6 @@ export const Experiences = () => {
   const elementToAppendCompany6 = useMatrixifyAnimation<HTMLHeadingElement>(
     [experience6.company],
     {
-      waitingTimeBeforeStartMessage: 0,
       waitingTimeBeforeNextMessage: 0,
       appendLettersSpeed: 25 + 50,
       removeLettersSpeed: 0,
@@ -353,7 +334,6 @@ export const Experiences = () => {
         id="experiences"
         className="text-center text-4xl font-bold text-green-500 shadow-green-500 drop-shadow-ultra hover:text-green-600 lg:text-left"
       ></h2>
-
       <div className="flex  flex-col gap-2 pb-8 pt-4">
         {experiencesRefs.map((experience) => (
           <div

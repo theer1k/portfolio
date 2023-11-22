@@ -7,7 +7,7 @@ export const Projects = () => {
   const projectsText = ['Projects'];
 
   const { ref: refTitle, inView: inViewTitle } = useInView({
-    threshold: 0,
+    threshold: 0.5,
     trackVisibility: true,
     delay: 100,
   });
