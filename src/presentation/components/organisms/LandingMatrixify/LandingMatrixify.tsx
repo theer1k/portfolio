@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 
-import { useMatrixifyAnimation } from '@/presentation/hooks/useMatrixifyAnimation/useMatrixifyAnimation';
+import { useMatrixifyAnimation } from '@/presentation/hooks/useMatrixifyAnimation';
 
 export const LandingMatrixify = () => {
   const messages = [

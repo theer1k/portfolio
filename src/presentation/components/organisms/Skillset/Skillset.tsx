@@ -3,13 +3,13 @@ import Image from 'next/image';
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 
-import { useMatrixifyAnimation } from '@/presentation/hooks/useMatrixifyAnimation/useMatrixifyAnimation';
+import { useMatrixifyAnimation } from '@/presentation/hooks/useMatrixifyAnimation';
 
 export const Skillset = () => {
   const titleText = ['Skillset/tools'];
 
   const { ref: refTitle, inView: inViewTitle } = useInView({
-    threshold: 0,
+    threshold: 0.6,
     trackVisibility: true,
     delay: 100,
   });
@@ -212,16 +212,6 @@ export const Skillset = () => {
             className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
           />
         </Tooltip>
-        <Tooltip content="ESLint">
-          <Image
-            src="/svgs/eslint.svg"
-            alt="ESLint"
-            width={40}
-            height={40}
-            quality={100}
-            className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
-          />
-        </Tooltip>
         <Tooltip content="Amazon Web Services">
           <Image
             src="/svgs/aws.svg"
@@ -343,10 +333,10 @@ export const Skillset = () => {
             className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
           />
         </Tooltip>
-        <Tooltip content="Programming Language">
+        <Tooltip content="C Language">
           <Image
             src="/svgs/clanguage.svg"
-            alt="C Programming Language"
+            alt="C Language"
             width={40}
             height={40}
             quality={100}
@@ -413,7 +403,7 @@ export const Skillset = () => {
             className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
           />
         </Tooltip>
-        <Tooltip content="Yarn">
+        <Tooltip content="Yarn Package Manager">
           <Image
             src="/svgs/yarn.svg"
             alt="Yarn Package Manager"
