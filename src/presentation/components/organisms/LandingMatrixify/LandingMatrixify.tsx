@@ -1,9 +1,12 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { useMatrixifyAnimation } from '@/presentation/hooks/useMatrixifyAnimation';
 
 export const LandingMatrixify = () => {
+  const [dismissAllBlackIntroduction, setDismissAllBlackIntroduction] =
+    useState(false);
+
   const messages = [
     'Wake up...',
     'Wake up...',
@@ -20,10 +23,27 @@ export const LandingMatrixify = () => {
     infinite: true,
   });
 
+  useEffect(() => {
+    const dismissAllBlackIntroductionTimeoutId = window.setTimeout(() => {
+      setDismissAllBlackIntroduction(!dismissAllBlackIntroduction);
+      clearTimeout(dismissAllBlackIntroductionTimeoutId);
+    }, 20000);
+
+    return () => {
+      clearTimeout(dismissAllBlackIntroductionTimeoutId);
+    };
+  }, []);
+
   return (
-    <div className="relative flex border-b-4 border-green-500">
+    <div
+      id="matrixify"
+      className="relative flex h-screen border-b-4 border-green-500"
+    >
       <div
-        className="absolute z-10 h-full w-full bg-cover bg-local bg-center bg-no-repeat md:z-auto lg:bg-fixed"
+        className={`${dismissAllBlackIntroduction ? 'remove-from-back-to-top' : ''} landing-matrixify z-20`}
+      ></div>
+      <div
+        className="absolute z-10 size-full bg-cover bg-local bg-center bg-no-repeat md:z-auto lg:bg-fixed"
         style={{
           backgroundImage: 'url(/images/source_codes.jpeg)',
           opacity: 0.5,
@@ -37,9 +57,8 @@ export const LandingMatrixify = () => {
         width={0}
         height={0}
         sizes="100vw"
-        className="w-full object-cover md:w-1/2"
+        className="size-full object-cover md:w-1/2"
         style={{
-          height: '700px',
           objectPosition: '0px 20%',
         }}
         quality={100}
@@ -47,12 +66,11 @@ export const LandingMatrixify = () => {
       <div
         ref={elementToAppendText}
         style={{
-          opacity: 0.9,
           left: '50%',
           top: '50%',
           transform: 'translate(-50%, -50%)',
         }}
-        className="absolute z-20 flex h-28 w-10/12 items-center justify-center rounded-md bg-black p-4 text-center text-2xl font-bold text-green-500 hover:text-green-600 md:z-auto lg:w-3/5 xl:w-1/3"
+        className="absolute z-20 flex h-20 w-8/12 items-center justify-center rounded-md bg-black p-3 text-center text-xl font-bold text-green-500 hover:text-green-600 lg:w-1/4"
       ></div>
     </div>
   );

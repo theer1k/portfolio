@@ -1,12 +1,13 @@
 import { Tooltip } from 'flowbite-react';
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 import { useMatrixifyAnimation } from '@/presentation/hooks/useMatrixifyAnimation';
 
 export const Skillset = () => {
-  const titleText = ['Skillset/tools'];
+  const [allowScrolling, setAllowScrolling] = useState(false);
+  const titleText = ['Skillset/Tools'];
 
   const { ref: refTitle, inView: inViewTitle } = useInView({
     threshold: 0.6,
@@ -25,15 +26,26 @@ export const Skillset = () => {
     inViewTitle,
   );
 
+  useEffect(() => {
+    const allowScrollingTimeoutId = window.setTimeout(() => {
+      setAllowScrolling(!allowScrolling);
+      clearTimeout(allowScrollingTimeoutId);
+    }, 20000);
+
+    return () => {
+      clearTimeout(allowScrollingTimeoutId);
+    };
+  }, []);
+
   return (
     <div
       ref={refTitle}
-      className="relative w-full border-b-4 border-green-500 bg-white px-10 py-6"
+      className={`${allowScrolling ? 'visible' : 'hidden'} relative w-full border-b-4 border-green-500 bg-white px-10 py-6`}
     >
       <h2
         ref={elementToAppendTitle}
         id="skillset"
-        className="text-center text-4xl font-bold text-green-500 hover:text-green-600 lg:text-left"
+        className="text-center text-2xl font-bold text-green-500 hover:text-green-600 lg:text-left"
       ></h2>
       <div
         className={`${
@@ -46,8 +58,8 @@ export const Skillset = () => {
           <Image
             src="/svgs/nextjs.svg"
             alt="Next.js"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             quality={100}
             className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
           />
@@ -56,8 +68,8 @@ export const Skillset = () => {
           <Image
             src="/svgs/angular.svg"
             alt="Angular"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             quality={100}
             className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
           />
@@ -66,8 +78,8 @@ export const Skillset = () => {
           <Image
             src="/svgs/bootstrap.svg"
             alt="Bootstrap"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             quality={100}
             className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
           />
@@ -76,8 +88,8 @@ export const Skillset = () => {
           <Image
             src="/svgs/css.svg"
             alt="Cascading Style Sheets (CSS)"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             quality={100}
             className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
           />
@@ -86,8 +98,8 @@ export const Skillset = () => {
           <Image
             src="/svgs/electronjs.svg"
             alt="Electron.js"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             quality={100}
             className="cursor-pointer shadow-zinc-800 drop-shadow-ultra"
           />
@@ -96,8 +108,8 @@ export const Skillset = () => {
           <Image
             src="/svgs/html.svg"
             alt="Hypertext Markup Language (HTML)"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             quality={100}
             className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
           />
@@ -106,8 +118,8 @@ export const Skillset = () => {
           <Image
             src="/svgs/ionic.svg"
             alt="Ionic"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             quality={100}
             className="cursor-pointer shadow-zinc-600 drop-shadow-ultra"
           />
@@ -116,8 +128,8 @@ export const Skillset = () => {
           <Image
             src="/svgs/javascript.svg"
             alt="JavaScript"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             quality={100}
             className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
           />
@@ -126,8 +138,8 @@ export const Skillset = () => {
           <Image
             src="/svgs/typescript.svg"
             alt="TypeScript"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             quality={100}
             className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
           />
@@ -136,8 +148,8 @@ export const Skillset = () => {
           <Image
             src="/svgs/reactjs.svg"
             alt="React.js"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             quality={100}
             className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
           />
@@ -146,8 +158,8 @@ export const Skillset = () => {
           <Image
             src="/svgs/redux.svg"
             alt="Redux.js"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             quality={100}
             className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
           />
@@ -156,8 +168,8 @@ export const Skillset = () => {
           <Image
             src="/svgs/sass.svg"
             alt="Sass/Scss"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             quality={100}
             className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
           />
@@ -166,8 +178,8 @@ export const Skillset = () => {
           <Image
             src="/svgs/storybook.svg"
             alt="Storybook"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             quality={100}
             className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
           />
@@ -176,8 +188,8 @@ export const Skillset = () => {
           <Image
             src="/svgs/stylus.svg"
             alt="Stylus"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             quality={100}
             className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
           />
@@ -186,8 +198,8 @@ export const Skillset = () => {
           <Image
             src="/svgs/tailwindcss.svg"
             alt="Tailwind CSS Framework"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             quality={100}
             className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
           />
@@ -196,18 +208,18 @@ export const Skillset = () => {
           <Image
             src="/svgs/vuejs.svg"
             alt="Vue.js"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             quality={100}
             className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
           />
         </Tooltip>
-        <Tooltip content="Vue.js UI Framework">
+        <Tooltip content="Vuetify">
           <Image
             src="/svgs/vuetify.svg"
-            alt="Vue.js UI Framework"
-            width={40}
-            height={40}
+            alt="Vuetify"
+            width={30}
+            height={30}
             quality={100}
             className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
           />
@@ -216,8 +228,8 @@ export const Skillset = () => {
           <Image
             src="/svgs/aws.svg"
             alt="AWS"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             quality={100}
             className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
           />
@@ -226,8 +238,8 @@ export const Skillset = () => {
           <Image
             src="/svgs/graphql.svg"
             alt="GraphQL"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             quality={100}
             className="cursor-pointer shadow-zinc-600 drop-shadow-ultra"
           />
@@ -236,8 +248,8 @@ export const Skillset = () => {
           <Image
             src="/svgs/express.svg"
             alt="Express.js"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             quality={100}
             className="cursor-pointer shadow-zinc-800 drop-shadow-ultra"
           />
@@ -246,8 +258,8 @@ export const Skillset = () => {
           <Image
             src="/svgs/nestjs.svg"
             alt="Nest.js"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             quality={100}
             className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
           />
@@ -256,8 +268,8 @@ export const Skillset = () => {
           <Image
             src="/svgs/nodejs.svg"
             alt="Node.js"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             quality={100}
             className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
           />
@@ -266,8 +278,8 @@ export const Skillset = () => {
           <Image
             src="/svgs/mongodb.svg"
             alt="MongoDB"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             quality={100}
             className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
           />
@@ -276,8 +288,8 @@ export const Skillset = () => {
           <Image
             src="/svgs/postgresql.svg"
             alt="PostgreSQL"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             quality={100}
             className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
           />
@@ -286,8 +298,8 @@ export const Skillset = () => {
           <Image
             src="/svgs/sequelizejs.svg"
             alt="Sequelize.js"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             quality={100}
             className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
           />
@@ -296,8 +308,8 @@ export const Skillset = () => {
           <Image
             src="/svgs/sqlite.svg"
             alt="SQLite"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             quality={100}
             className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
           />
@@ -306,8 +318,8 @@ export const Skillset = () => {
           <Image
             src="/svgs/nginx.svg"
             alt="Nginx"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             quality={100}
             className="cursor-pointer shadow-zinc-500 drop-shadow-ultra"
           />
@@ -316,8 +328,8 @@ export const Skillset = () => {
           <Image
             src="/svgs/webpack.svg"
             alt="Webpack Module Bundler"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             quality={100}
             className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
           />
@@ -327,8 +339,8 @@ export const Skillset = () => {
           <Image
             src="/svgs/babel.svg"
             alt="Babel"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             quality={100}
             className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
           />
@@ -337,8 +349,8 @@ export const Skillset = () => {
           <Image
             src="/svgs/clanguage.svg"
             alt="C Language"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             quality={100}
             className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
           />
@@ -347,8 +359,8 @@ export const Skillset = () => {
           <Image
             src="/svgs/docker.svg"
             alt="Docker"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             quality={100}
             className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
           />
@@ -357,8 +369,8 @@ export const Skillset = () => {
           <Image
             src="/svgs/git.svg"
             alt="Git"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             quality={100}
             className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
           />
@@ -367,8 +379,8 @@ export const Skillset = () => {
           <Image
             src="/svgs/linux.svg"
             alt="Linux"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             quality={100}
             className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
           />
@@ -377,8 +389,8 @@ export const Skillset = () => {
           <Image
             src="/svgs/postman.svg"
             alt="Postman"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             quality={100}
             className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
           />
@@ -387,8 +399,8 @@ export const Skillset = () => {
           <Image
             src="/svgs/ubuntu.svg"
             alt="Ubuntu Linux Distribution"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             quality={100}
             className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
           />
@@ -397,8 +409,8 @@ export const Skillset = () => {
           <Image
             src="/svgs/npm.svg"
             alt="NPM"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             quality={100}
             className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
           />
@@ -407,8 +419,8 @@ export const Skillset = () => {
           <Image
             src="/svgs/yarn.svg"
             alt="Yarn Package Manager"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             quality={100}
             className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
           />
