@@ -1,6 +1,6 @@
 export const AppConfig = {
-  site_name: 'IndianBoyBR',
-  title: 'IndianBoyBR - Software Engineer | Full Stack Engineer',
-  description: `Hi, I'm Erik... a Software Engineer with 5+ years of experience in Next.js, React.js, Angular, Node.js, Docker, and AWS. Building seamless user experiences.`,
+  site_name: 'theer1k',
+  title: 'theer1k - Software Engineer',
+  description: `I am a professional with experience in frontend, mobile, and backend, having worked as a software engineer for the past 5 years.`,
   locale: 'en',
 };

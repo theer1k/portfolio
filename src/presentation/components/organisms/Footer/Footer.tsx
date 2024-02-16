@@ -1,20 +1,22 @@
 import { MapPinIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 import { useMatrixifyAnimation } from '@/presentation/hooks/useMatrixifyAnimation';
 
 export const Footer = () => {
+  const [allowScrolling, setAllowScrolling] = useState(false);
+
   const { ref: refFooter, inView: inViewFooter } = useInView({
-    threshold: 0.5,
+    threshold: 0.4,
     trackVisibility: true,
     delay: 100,
   });
 
   const { ref: refFooterBaseBoard, inView: inViewFooterBaseBoard } = useInView({
-    threshold: 0.5,
+    threshold: 0.3,
     trackVisibility: true,
     delay: 100,
   });
@@ -57,7 +59,7 @@ export const Footer = () => {
     );
 
   const elementToAppendWebsiteName = useMatrixifyAnimation<HTMLHeadingElement>(
-    ['IndianBoyBR'],
+    ['theer1k'],
     {
       waitingTimeBeforeStartMessage: 0,
       appendLettersSpeed: 90,
@@ -90,7 +92,7 @@ export const Footer = () => {
   );
 
   const elementToAppendYoutube = useMatrixifyAnimation<HTMLAnchorElement>(
-    ['DevBR Na Gringa'],
+    ['theer1k'],
     {
       waitingTimeBeforeStartMessage: 300,
       appendLettersSpeed: 60,
@@ -101,7 +103,7 @@ export const Footer = () => {
   );
 
   const elementToAppendGitHub = useMatrixifyAnimation<HTMLAnchorElement>(
-    ['IndianBoyBR'],
+    ['theer1k'],
     {
       waitingTimeBeforeStartMessage: 400,
       appendLettersSpeed: 70,
@@ -134,7 +136,7 @@ export const Footer = () => {
   );
 
   const elementToAppendPageWhoami = useMatrixifyAnimation<HTMLAnchorElement>(
-    ['Whoami'],
+    ['• Whoami'],
     {
       waitingTimeBeforeStartMessage: 100,
       appendLettersSpeed: 90,
@@ -145,7 +147,7 @@ export const Footer = () => {
   );
 
   const elementToAppendPageProjects = useMatrixifyAnimation<HTMLAnchorElement>(
-    ['Projects'],
+    ['• Projects'],
     {
       waitingTimeBeforeStartMessage: 200,
       appendLettersSpeed: 80,
@@ -157,7 +159,7 @@ export const Footer = () => {
 
   const elementToAppendPageExperiences =
     useMatrixifyAnimation<HTMLAnchorElement>(
-      ['Experiences'],
+      ['• Experiences'],
       {
         waitingTimeBeforeStartMessage: 300,
         appendLettersSpeed: 80,
@@ -168,7 +170,7 @@ export const Footer = () => {
     );
 
   const elementToAppendPageBlog = useMatrixifyAnimation<HTMLAnchorElement>(
-    ['Blog'],
+    ['• Blog'],
     {
       waitingTimeBeforeStartMessage: 400,
       appendLettersSpeed: 120,
@@ -179,7 +181,7 @@ export const Footer = () => {
   );
 
   const elementToAppendPageSkillset = useMatrixifyAnimation<HTMLAnchorElement>(
-    ['Skillset/tools'],
+    ['• Skillset/tools'],
     {
       waitingTimeBeforeStartMessage: 500,
       appendLettersSpeed: 80,
@@ -191,8 +193,8 @@ export const Footer = () => {
 
   const elementToAppendWebsiteRights = useMatrixifyAnimation<HTMLAnchorElement>(
     [
-      `${new Date().getFullYear()} @IndianBoyBR — All rights reserved.`,
-      'Made with ❤️ by Erik Cunha. Inspired by The Matrix movie.',
+      `${new Date().getFullYear()} @theer1k — All rights reserved.`,
+      'Made with ❤️ by Erik Henrique. Inspired by The Matrix movie.',
     ],
     {
       waitingTimeBeforeNextMessage: 6000,
@@ -204,7 +206,7 @@ export const Footer = () => {
     inViewFooterBaseBoard,
   );
   const elementToAppendAddress = useMatrixifyAnimation<HTMLElement>(
-    ['Vancouver, British Columbia — Canada'],
+    ['Campinas, São Paulo — Brazil'],
     {
       appendLettersSpeed: 40,
       removeLettersSpeed: 20,
@@ -213,12 +215,26 @@ export const Footer = () => {
     inViewFooterBaseBoard,
   );
 
+  useEffect(() => {
+    const allowScrollingTimeoutId = window.setTimeout(() => {
+      setAllowScrolling(!allowScrolling);
+      clearTimeout(allowScrollingTimeoutId);
+    }, 12000);
+
+    return () => {
+      clearTimeout(allowScrollingTimeoutId);
+    };
+  }, []);
+
   return (
-    <footer ref={refFooter} className="w-full bg-black px-10 text-green-500">
+    <footer
+      ref={refFooter}
+      className={`${allowScrolling ? 'visible' : 'hidden'} w-full bg-black px-10 text-green-500`}
+    >
       <div className="flex flex-col justify-between gap-8 border-b-2 border-b-green-500 py-6 lg:flex-row">
         <div className="flex w-full flex-col lg:w-96">
           <h2
-            className="text-3xl font-bold"
+            className="text-xl font-bold"
             ref={elementToAppendGetInTouch}
           ></h2>
           <span
@@ -233,7 +249,7 @@ export const Footer = () => {
         <div className="relative w-full lg:w-96">
           <div className="flex items-center gap-4">
             <h2
-              className="text-3xl font-bold"
+              className="text-xl font-bold"
               ref={elementToAppendWebsiteName}
             ></h2>
             <Image
@@ -250,7 +266,7 @@ export const Footer = () => {
           <div className="mt-4 flex flex-col gap-4">
             <div className="flex gap-4">
               <a
-                className="h-7 w-7 self-center"
+                className="size-6 self-center"
                 target="_blank"
                 href="https://www.linkedin.com/in/erikhenriquealvescunha/"
               >
@@ -262,15 +278,15 @@ export const Footer = () => {
                   height="0"
                   className={`${
                     inViewFooter ? 'visible animate-fade-in' : 'invisible'
-                  } h-7 w-7`}
+                  } size-6`}
                   quality={100}
                 />
               </a>
               <span className="text-lg">
                 <a
-                  aria-label="LinkedIn Profile for Erik Henrique Alves Cunha"
+                  aria-label="LinkedIn Profile Erik Henrique"
                   ref={elementToAppendLinkedin}
-                  className="h-7 w-7 self-center"
+                  className="size-6 self-center"
                   target="_blank"
                   href="https://www.linkedin.com/in/erikhenriquealvescunha/"
                 ></a>
@@ -278,7 +294,7 @@ export const Footer = () => {
             </div>
             <div className="flex gap-4">
               <a
-                className="h-7 w-7 self-center"
+                className="size-6 self-center"
                 target="_blank"
                 href="mailto:erikhenriquealvescunha@gmail.com"
               >
@@ -290,15 +306,15 @@ export const Footer = () => {
                   height="20"
                   className={`${
                     inViewFooter ? 'visible animate-fade-in' : 'invisible'
-                  } h-7 w-7`}
+                  } size-6`}
                   quality={100}
                 />
               </a>
               <span className="truncate text-lg">
                 <a
-                  aria-label="E-mail for Erik Henrique Alves Cunha"
+                  aria-label="E-mail Erik Henrique Alves Cunha"
                   ref={elementToAppendEmail}
-                  className="h-7 w-7 self-center"
+                  className="size-6 self-center"
                   target="_blank"
                   href="mailto:erikhenriquealvescunha@gmail.com"
                 ></a>
@@ -306,9 +322,9 @@ export const Footer = () => {
             </div>
             <div className="flex gap-4">
               <a
-                className="h-7 w-7 self-center"
+                className="size-6 self-center"
                 target="_blank"
-                href="https://www.youtube.com/@DevBRNaGringa"
+                href="https://www.youtube.com/@theer1k_dev"
               >
                 <Image
                   priority
@@ -318,25 +334,25 @@ export const Footer = () => {
                   height="0"
                   className={`${
                     inViewFooter ? 'visible animate-fade-in' : 'invisible'
-                  } h-7 w-7`}
+                  } size-6`}
                   quality={100}
                 />
               </a>
               <span className="text-lg">
                 <a
-                  aria-label="Youtube for DevBRNaGringa"
+                  aria-label="Youtube theer1k_dev"
                   ref={elementToAppendYoutube}
-                  className="h-7 w-7 self-center"
+                  className="size-6 self-center"
                   target="_blank"
-                  href="https://www.youtube.com/@DevBRNaGringa"
+                  href="https://www.youtube.com/@theer1k_dev"
                 ></a>
               </span>
             </div>
             <div className="flex gap-4">
               <a
-                className="h-7 w-7 self-center"
+                className="size-6 self-center"
                 target="_blank"
-                href="https://github.com/IndianBoyBR"
+                href="https://github.com/theer1k"
               >
                 <Image
                   priority
@@ -346,48 +362,48 @@ export const Footer = () => {
                   height="0"
                   className={`${
                     inViewFooter ? 'visible animate-fade-in' : 'invisible'
-                  } h-7 w-7`}
+                  } size-6`}
                   quality={100}
                 />
               </a>
               <span className="text-lg">
                 <a
-                  aria-label="GitHub for IndianBoyBR"
+                  aria-label="GitHub theer1k"
                   ref={elementToAppendGitHub}
-                  className="h-7 w-7 self-center"
+                  className="size-6 self-center"
                   target="_blank"
-                  href="https://github.com/IndianBoyBR"
+                  href="https://github.com/theer1k"
                 ></a>
               </span>
             </div>
           </div>
         </div>
         <div className="flex w-full flex-col lg:w-56">
-          <h2 className="text-3xl font-bold" ref={elementToAppendSitemap}></h2>
+          <h2 className="text-xl font-bold" ref={elementToAppendSitemap}></h2>
           <span
             className="text-lg font-bold"
             ref={elementToAppendAllPages}
           ></span>
-          <ul className="ml-4 mt-4 list-disc">
-            <li className="text-lg">
+          <div className="mt-4 flex flex-col gap-1">
+            <span className="text-base">
               <Link href="#whoami" ref={elementToAppendPageWhoami}></Link>
-            </li>
-            <li className="mt-3 text-lg">
+            </span>
+            <span className="text-base">
               <Link href="#projects" ref={elementToAppendPageProjects}></Link>
-            </li>
-            <li className="mt-3 text-lg">
+            </span>
+            <span className="text-base">
               <Link
                 href="#experiences"
                 ref={elementToAppendPageExperiences}
               ></Link>
-            </li>
-            <li className="mt-3 text-lg">
+            </span>
+            <span className="text-base">
               <Link href="#blog" ref={elementToAppendPageBlog}></Link>
-            </li>
-            <li className="mt-3 text-lg">
+            </span>
+            <span className="text-base">
               <Link href="#skillset" ref={elementToAppendPageSkillset}></Link>
-            </li>
-          </ul>
+            </span>
+          </div>
         </div>
       </div>
       <div className="py-6" ref={refFooterBaseBoard}>
@@ -396,10 +412,10 @@ export const Footer = () => {
             className={`${
               inViewFooterBaseBoard
                 ? 'visible animate-fade-bottom-to-top lg:animate-fade-right-to-left'
-                : 'invisible'
-            } h-8`}
+                : 'invisible hidden'
+            } h-6`}
           />
-          <address className="text-xl" ref={elementToAppendAddress}></address>
+          <address className="text-md" ref={elementToAppendAddress}></address>
         </div>
         <div className="flex flex-col-reverse items-center justify-between gap-8 lg:flex-row">
           <span
@@ -410,11 +426,11 @@ export const Footer = () => {
             className={`${
               inViewFooterBaseBoard
                 ? 'visible animate-fade-bottom-to-top lg:animate-fade-right-to-left'
-                : 'invisible'
+                : 'invisible hidden'
             } flex w-full flex-wrap justify-center gap-8 lg:justify-end`}
           >
             <a
-              className="h-7 w-7 self-center"
+              className="size-6 self-center"
               target="_blank"
               href="https://www.linkedin.com/in/erikhenriquealvescunha/"
             >
@@ -426,12 +442,12 @@ export const Footer = () => {
                 height="0"
                 className={`${
                   inViewFooter ? 'visible animate-fade-in' : 'invisible'
-                } h-7 w-7`}
+                } size-6`}
                 quality={100}
               />
             </a>
             <a
-              className="h-7 w-7 self-center"
+              className="size-6 self-center"
               target="_blank"
               href="mailto:erikhenriquealvescunha@gmail.com"
             >
@@ -443,14 +459,14 @@ export const Footer = () => {
                 height="0"
                 className={`${
                   inViewFooter ? 'visible animate-fade-in' : 'invisible'
-                } h-7 w-7`}
+                } size-6`}
                 quality={100}
               />
             </a>
             <a
-              className="h-7 w-7 self-center"
+              className="size-6 self-center"
               target="_blank"
-              href="https://www.youtube.com/@DevBRNaGringa"
+              href="https://www.youtube.com/@theer1k_dev"
             >
               <Image
                 priority
@@ -460,14 +476,14 @@ export const Footer = () => {
                 height="0"
                 className={`${
                   inViewFooter ? 'visible animate-fade-in' : 'invisible'
-                } h-7 w-7`}
+                } size-6`}
                 quality={100}
               />
             </a>
             <a
-              className="h-7 w-7 self-center"
+              className="size-6 self-center"
               target="_blank"
-              href="https://twitter.com/IndianBoyBR"
+              href="https://twitter.com/theer1k"
             >
               <Image
                 priority
@@ -477,14 +493,14 @@ export const Footer = () => {
                 height="0"
                 className={`${
                   inViewFooter ? 'visible animate-fade-in' : 'invisible'
-                } h-7 w-7`}
+                } size-6`}
                 quality={100}
               />
             </a>
             <a
-              className="h-7 w-7 self-center"
+              className="size-6 self-center"
               target="_blank"
-              href="https://www.hackerrank.com/profile/IndianBoyBR"
+              href="https://www.hackerrank.com/profile/theer1k"
             >
               <Image
                 priority
@@ -494,14 +510,14 @@ export const Footer = () => {
                 height="0"
                 className={`${
                   inViewFooter ? 'visible animate-fade-in' : 'invisible'
-                } h-7 w-7`}
+                } size-6`}
                 quality={100}
               />
             </a>
             <a
-              className="h-7 w-7 self-center"
+              className="size-6 self-center"
               target="_blank"
-              href="https://github.com/IndianBoyBR"
+              href="https://github.com/theer1k"
             >
               <Image
                 priority
@@ -511,14 +527,14 @@ export const Footer = () => {
                 height="0"
                 className={`${
                   inViewFooter ? 'visible animate-fade-in' : 'invisible'
-                } h-7 w-7`}
+                } size-6`}
                 quality={100}
               />
             </a>
             <a
-              className="h-7 w-7 self-center"
+              className="size-6 self-center"
               target="_blank"
-              href="https://dev.to/indianboybr"
+              href="https://dev.to/theer1k"
             >
               <Image
                 priority
@@ -528,7 +544,7 @@ export const Footer = () => {
                 height="0"
                 className={`${
                   inViewFooter ? 'visible animate-fade-in' : 'invisible'
-                } h-7 w-7`}
+                } size-6`}
                 quality={100}
               />
             </a>

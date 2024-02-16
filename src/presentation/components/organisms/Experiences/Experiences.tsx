@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 import { useMatrixifyAnimation } from '@/presentation/hooks/useMatrixifyAnimation';
@@ -11,6 +11,7 @@ type Experience = {
 };
 
 export const Experiences = () => {
+  const [allowScrolling, setAllowScrolling] = useState(false);
   const experiencesText = ['Experiences'];
 
   const { ref: refTitle, inView: inViewTitle } = useInView({
@@ -32,47 +33,41 @@ export const Experiences = () => {
 
   const lastExperiences = [
     {
-      key: 'now_canon_medical_systems_brazil_full_time_contract_senior_software_developer_front_end',
+      key: 'now_canon_medical_systems_brazil_full_time_contract_software_developer_front_end',
       when: 'Now',
-      position: 'Senior Software Engineer | Front-End',
+      position: 'Software Engineering Consultant',
       company: 'Canon Medical Systems — Brazil • Full-time contract',
     },
     {
-      key: '2021_grupo_sbf_nike_brazil_centauro_brazil_full_time_permanent_mid_level_software_developer_front_end',
+      key: '2021_grupo_sbf_nike_brazil_centauro_brazil_full_time_permanent_software_developer_front_end',
       when: '2021',
-      position: 'Mid-Level Software Engineer | Front-End',
+      position: 'Software Engineer',
       company:
         'Grupo SBF | Nike Brazil & Centauro — Brazil • Full-time permanent',
     },
     {
-      key: '2020_encora_inc_brazil_full_time_permanent_mid_level_software_developer_front_end',
+      key: '2020_encora_inc_brazil_full_time_permanent_software_developer_front_end',
       when: '2020',
-      position: 'Mid-Level Software Engineer | Front-End',
+      position: 'Mid-Level Software Engineer',
       company: 'Encora Inc. — Brazil • Full-time permanent',
     },
     {
-      key: '2020_zup_innovation_itau_bank_brazil_full_time_permanent_mid_level_software_developer_front_end',
+      key: '2020_zup_innovation_itau_bank_brazil_full_time_permanent_software_developer_front_end',
       when: '2020',
-      position: 'Mid-Level Software Engineer | Front-End',
+      position: 'Mid-Level Software Engineer',
       company: 'Zup Innovation (Itaú Bank) — Brazil • Full-time permanent',
     },
     {
-      key: '2019_venturus_brazil_full_time_permanent_junior_software_developer_full_stack',
+      key: '2019_venturus_brazil_full_time_permanent_software_developer_full_stack',
       when: '2019',
-      position: 'Junior Software Engineer | Full-Stack',
+      position: 'Full Stack Engineer (MEAN Stack)',
       company: 'Venturus — Brazil • Full-time permanent',
     },
     {
-      key: '2018_mb_labs_brazil_full_time_contract_junior_software_developer_full_stack',
+      key: '2018_mb_labs_brazil_full_time_contract_software_developer_full_stack',
       when: '2018',
-      position: 'Junior Software Engineer | Full-Stack',
+      position: 'Full Stack Engineer',
       company: 'MB Labs — Brazil • Full-time contract',
-    },
-    {
-      key: '2017_monde_sistemas_brazil_internship_intern_software_development',
-      when: '2017',
-      position: 'Intern | Software Development',
-      company: 'Monde Sistemas — Brazil • Internship',
     },
   ];
 
@@ -324,15 +319,26 @@ export const Experiences = () => {
     elementToAppendCompany: elementToAppendCompany6,
   });
 
+  useEffect(() => {
+    const allowScrollingTimeoutId = window.setTimeout(() => {
+      setAllowScrolling(!allowScrolling);
+      clearTimeout(allowScrollingTimeoutId);
+    }, 12000);
+
+    return () => {
+      clearTimeout(allowScrollingTimeoutId);
+    };
+  }, []);
+
   return (
     <div
       ref={refTitle}
-      className="relative w-full border-b-4 border-green-500 bg-black px-10 py-6 text-green-500"
+      className={`${allowScrolling ? 'visible' : 'hidden'} relative w-full border-b-4 border-green-500 bg-black px-10 py-6 text-green-500`}
     >
       <h2
         ref={elementToAppendTitle}
         id="experiences"
-        className="text-center text-4xl font-bold text-green-500 shadow-green-500 drop-shadow-ultra hover:text-green-600 lg:text-left"
+        className="text-center text-2xl font-bold text-green-500 shadow-green-500 drop-shadow-ultra hover:text-green-600 lg:text-left"
       ></h2>
       <div className="flex  flex-col gap-2 pb-8 pt-4">
         {experiencesRefs.map((experience) => (
@@ -346,16 +352,16 @@ export const Experiences = () => {
           >
             <span
               ref={experience?.elementToAppendDate}
-              className="text-3xl"
+              className="text-xl"
               style={{ minWidth: '6rem', maxWidth: '8rem' }}
             ></span>
             <div className="flex flex-col">
               <span
-                className="text-3xl font-bold"
+                className="text-xl font-bold"
                 ref={experience?.elementToAppendPosition}
               ></span>
               <span
-                className="text-2xl"
+                className="text-xl"
                 ref={experience?.elementToAppendCompany}
               ></span>
             </div>

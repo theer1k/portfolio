@@ -1,10 +1,10 @@
-# IndianBoyBR
+# theer1k
 
 It is built with Next.js, Tailwind CSS, Flowbite, and TypeScript to provide a seamless developer experience.
 
 ### Features
 
-Developer experience first:
+Engineer experience first:
 
 - ⚡ [Next.js](https://nextjs.org) for Static Site Generator
 
@@ -82,9 +82,9 @@ Run the following command on your local environment:
 
 ```shell
 
-git clone --depth=1  https://github.com/IndianBoyBR/IndianBoyBR-NextJS.git
+git clone --depth=1  https://github.com/theer1k/portfolio.git
 
-cd IndianBoyBR-NextJS
+cd portfolio
 
 pnpm install
 ```
@@ -206,7 +206,7 @@ See [LICENSE](LICENSE) for more information.
 
 ---
 
-Made with ♥ by [IndianBoyBR](https://indianboy.com.br/)
+Made with ♥ by [theer1k](https://indianboy.com.br/)
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/erik-cunha/)
-[![LinkedIn](https://img.shields.io/badge/dev.to-0A0A0A?style=for-the-badge&logo=dev.to&logoColor=white)](https://dev.to/IndianBoyBR)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/erikhenriquealvescunha/)
+[![LinkedIn](https://img.shields.io/badge/dev.to-0A0A0A?style=for-the-badge&logo=dev.to&logoColor=white)](https://dev.to/theer1k)
