@@ -1,6 +1,6 @@
 import { HttpStatusCode } from 'axios';
 
-import { AccessDeniedError, UnexpectedError } from '@/domain/errors';
+import { UnexpectedError } from '@/domain/errors';
 import type { LoadArticlesList } from '@/domain/use-cases';
 
 import type { RemoteArticleModel } from '../models';
@@ -25,8 +25,6 @@ export class RemoteLoadArticlesList implements LoadArticlesList {
         return remoteArticles;
       case HttpStatusCode.NoContent:
         return [];
-      case HttpStatusCode.Forbidden:
-        throw new AccessDeniedError();
       default:
         throw new UnexpectedError();
     }

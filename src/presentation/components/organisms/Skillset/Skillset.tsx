@@ -54,7 +54,7 @@ export const Skillset = () => {
             : 'invisible'
         } flex flex-wrap items-center justify-center gap-8 py-8`}
       >
-        <Tooltip content="Next.js">
+        <Tooltip content="Next.js" style="dark">
           <Image
             src="/svgs/nextjs.svg"
             alt="Next.js"
@@ -114,7 +114,7 @@ export const Skillset = () => {
             className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
           />
         </Tooltip>
-        <Tooltip content="Ionic">
+        <Tooltip content="Ionic Framework">
           <Image
             src="/svgs/ionic.svg"
             alt="Ionic"
@@ -164,10 +164,10 @@ export const Skillset = () => {
             className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
           />
         </Tooltip>
-        <Tooltip content="Sass/Scss">
+        <Tooltip content="SASS">
           <Image
             src="/svgs/sass.svg"
-            alt="Sass/Scss"
+            alt="SASS"
             width={30}
             height={30}
             quality={100}
@@ -184,40 +184,10 @@ export const Skillset = () => {
             className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
           />
         </Tooltip>
-        <Tooltip content="Stylus">
-          <Image
-            src="/svgs/stylus.svg"
-            alt="Stylus"
-            width={30}
-            height={30}
-            quality={100}
-            className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
-          />
-        </Tooltip>
-        <Tooltip content="Tailwind CSS Framework">
+        <Tooltip content="Tailwind CSS">
           <Image
             src="/svgs/tailwindcss.svg"
-            alt="Tailwind CSS Framework"
-            width={30}
-            height={30}
-            quality={100}
-            className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
-          />
-        </Tooltip>
-        <Tooltip content="Vue.js">
-          <Image
-            src="/svgs/vuejs.svg"
-            alt="Vue.js"
-            width={30}
-            height={30}
-            quality={100}
-            className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
-          />
-        </Tooltip>
-        <Tooltip content="Vuetify">
-          <Image
-            src="/svgs/vuetify.svg"
-            alt="Vuetify"
+            alt="Tailwind CSS"
             width={30}
             height={30}
             quality={100}
@@ -294,51 +264,10 @@ export const Skillset = () => {
             className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
           />
         </Tooltip>
-        <Tooltip content="Sequelize.js">
-          <Image
-            src="/svgs/sequelizejs.svg"
-            alt="Sequelize.js"
-            width={30}
-            height={30}
-            quality={100}
-            className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
-          />
-        </Tooltip>
         <Tooltip content="SQLite">
           <Image
             src="/svgs/sqlite.svg"
             alt="SQLite"
-            width={30}
-            height={30}
-            quality={100}
-            className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
-          />
-        </Tooltip>
-        <Tooltip content="Nginx">
-          <Image
-            src="/svgs/nginx.svg"
-            alt="Nginx"
-            width={30}
-            height={30}
-            quality={100}
-            className="cursor-pointer shadow-zinc-500 drop-shadow-ultra"
-          />
-        </Tooltip>
-        <Tooltip content="Webpack Module Bundler">
-          <Image
-            src="/svgs/webpack.svg"
-            alt="Webpack Module Bundler"
-            width={30}
-            height={30}
-            quality={100}
-            className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
-          />
-        </Tooltip>
-
-        <Tooltip content="JavaScript Compiler">
-          <Image
-            src="/svgs/babel.svg"
-            alt="Babel"
             width={30}
             height={30}
             quality={100}
@@ -369,56 +298,6 @@ export const Skillset = () => {
           <Image
             src="/svgs/git.svg"
             alt="Git"
-            width={30}
-            height={30}
-            quality={100}
-            className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
-          />
-        </Tooltip>
-        <Tooltip content="Linux">
-          <Image
-            src="/svgs/linux.svg"
-            alt="Linux"
-            width={30}
-            height={30}
-            quality={100}
-            className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
-          />
-        </Tooltip>
-        <Tooltip content="Postman">
-          <Image
-            src="/svgs/postman.svg"
-            alt="Postman"
-            width={30}
-            height={30}
-            quality={100}
-            className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
-          />
-        </Tooltip>
-        <Tooltip content="Ubuntu Linux">
-          <Image
-            src="/svgs/ubuntu.svg"
-            alt="Ubuntu Linux Distribution"
-            width={30}
-            height={30}
-            quality={100}
-            className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
-          />
-        </Tooltip>
-        <Tooltip content="Node Package Manager">
-          <Image
-            src="/svgs/npm.svg"
-            alt="NPM"
-            width={30}
-            height={30}
-            quality={100}
-            className="cursor-pointer shadow-zinc-400 drop-shadow-ultra"
-          />
-        </Tooltip>
-        <Tooltip content="Yarn Package Manager">
-          <Image
-            src="/svgs/yarn.svg"
-            alt="Yarn Package Manager"
             width={30}
             height={30}
             quality={100}

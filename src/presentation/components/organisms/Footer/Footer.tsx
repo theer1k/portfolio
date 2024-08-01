@@ -258,9 +258,7 @@ export const Footer = () => {
               width="0"
               height="0"
               quality={100}
-              className={`${
-                inViewFooter ? 'visible animate-fade-in' : 'invisible'
-              } h-auto w-20`}
+              className={`${inViewFooter ? 'visible animate-fade-in' : 'invisible'} h-auto w-20`}
             />
           </div>
           <div className="mt-4 flex flex-col gap-4">
@@ -276,9 +274,7 @@ export const Footer = () => {
                   alt="LinkedIn Logo"
                   width="0"
                   height="0"
-                  className={`${
-                    inViewFooter ? 'visible animate-fade-in' : 'invisible'
-                  } size-6`}
+                  className={`${inViewFooter ? 'visible animate-fade-in' : 'invisible'} size-6`}
                   quality={100}
                 />
               </a>
@@ -304,9 +300,7 @@ export const Footer = () => {
                   alt="Email Logo"
                   width="20"
                   height="20"
-                  className={`${
-                    inViewFooter ? 'visible animate-fade-in' : 'invisible'
-                  } size-6`}
+                  className={`${inViewFooter ? 'visible animate-fade-in' : 'invisible'} size-6`}
                   quality={100}
                 />
               </a>
@@ -332,9 +326,7 @@ export const Footer = () => {
                   alt="Youtube Logo"
                   width="0"
                   height="0"
-                  className={`${
-                    inViewFooter ? 'visible animate-fade-in' : 'invisible'
-                  } size-6`}
+                  className={`${inViewFooter ? 'visible animate-fade-in' : 'invisible'} size-6`}
                   quality={100}
                 />
               </a>
@@ -360,9 +352,7 @@ export const Footer = () => {
                   alt="GitHub Logo"
                   width="0"
                   height="0"
-                  className={`${
-                    inViewFooter ? 'visible animate-fade-in' : 'invisible'
-                  } size-6`}
+                  className={`${inViewFooter ? 'visible animate-fade-in' : 'invisible'} size-6`}
                   quality={100}
                 />
               </a>
@@ -409,11 +399,7 @@ export const Footer = () => {
       <div className="py-6" ref={refFooterBaseBoard}>
         <div className="flex flex-col items-center justify-center gap-4 pb-8 md:flex-row">
           <MapPinIcon
-            className={`${
-              inViewFooterBaseBoard
-                ? 'visible animate-fade-bottom-to-top lg:animate-fade-right-to-left'
-                : 'invisible hidden'
-            } h-6`}
+            className={`${inViewFooterBaseBoard ? 'visible animate-fade-bottom-to-top lg:animate-fade-right-to-left' : 'invisible hidden'} h-6`}
           />
           <address className="text-md" ref={elementToAppendAddress}></address>
         </div>
@@ -423,11 +409,7 @@ export const Footer = () => {
             ref={elementToAppendWebsiteRights}
           ></span>
           <div
-            className={`${
-              inViewFooterBaseBoard
-                ? 'visible animate-fade-bottom-to-top lg:animate-fade-right-to-left'
-                : 'invisible hidden'
-            } flex w-full flex-wrap justify-center gap-8 lg:justify-end`}
+            className={`${inViewFooterBaseBoard ? 'visible animate-fade-bottom-to-top lg:animate-fade-right-to-left' : 'invisible hidden'} flex w-full flex-wrap justify-center gap-8 lg:justify-end`}
           >
             <a
               className="size-6 self-center"
@@ -440,9 +422,7 @@ export const Footer = () => {
                 alt="LinkedIn Logo"
                 width="0"
                 height="0"
-                className={`${
-                  inViewFooter ? 'visible animate-fade-in' : 'invisible'
-                } size-6`}
+                className={`${inViewFooter ? 'visible animate-fade-in' : 'invisible'} size-6`}
                 quality={100}
               />
             </a>
@@ -457,9 +437,7 @@ export const Footer = () => {
                 alt="Email Logo"
                 width="0"
                 height="0"
-                className={`${
-                  inViewFooter ? 'visible animate-fade-in' : 'invisible'
-                } size-6`}
+                className={`${inViewFooter ? 'visible animate-fade-in' : 'invisible'} size-6`}
                 quality={100}
               />
             </a>
@@ -474,9 +452,7 @@ export const Footer = () => {
                 alt="Youtube Logo"
                 width="0"
                 height="0"
-                className={`${
-                  inViewFooter ? 'visible animate-fade-in' : 'invisible'
-                } size-6`}
+                className={`${inViewFooter ? 'visible animate-fade-in' : 'invisible'} size-6`}
                 quality={100}
               />
             </a>
@@ -491,9 +467,7 @@ export const Footer = () => {
                 alt="Twitter Logo"
                 width="0"
                 height="0"
-                className={`${
-                  inViewFooter ? 'visible animate-fade-in' : 'invisible'
-                } size-6`}
+                className={`${inViewFooter ? 'visible animate-fade-in' : 'invisible'} size-6`}
                 quality={100}
               />
             </a>
@@ -508,9 +482,7 @@ export const Footer = () => {
                 alt="HackerRank Logo"
                 width="0"
                 height="0"
-                className={`${
-                  inViewFooter ? 'visible animate-fade-in' : 'invisible'
-                } size-6`}
+                className={`${inViewFooter ? 'visible animate-fade-in' : 'invisible'} size-6`}
                 quality={100}
               />
             </a>
@@ -525,9 +497,7 @@ export const Footer = () => {
                 alt="GitHub Logo"
                 width="0"
                 height="0"
-                className={`${
-                  inViewFooter ? 'visible animate-fade-in' : 'invisible'
-                } size-6`}
+                className={`${inViewFooter ? 'visible animate-fade-in' : 'invisible'} size-6`}
                 quality={100}
               />
             </a>
@@ -542,9 +512,7 @@ export const Footer = () => {
                 alt="Dev.to Logo"
                 width="0"
                 height="0"
-                className={`${
-                  inViewFooter ? 'visible animate-fade-in' : 'invisible'
-                } size-6`}
+                className={`${inViewFooter ? 'visible animate-fade-in' : 'invisible'} size-6`}
                 quality={100}
               />
             </a>

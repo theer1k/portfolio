@@ -1,10 +1,12 @@
 /* eslint-disable global-require */
+const flowbite = require('flowbite-react/tailwind');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './node_modules/flowbite-react/**/*.js',
     './src/**/*.{js,ts,jsx,tsx}',
     './public/**/*.html',
+    flowbite.content(),
   ],
   theme: {
     fontSize: {
@@ -86,5 +88,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require('@tailwindcss/typography'), require('flowbite/plugin')],
+  plugins: [flowbite.plugin()],
 };
