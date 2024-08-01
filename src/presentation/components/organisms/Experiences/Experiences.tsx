@@ -35,38 +35,38 @@ export const Experiences = () => {
     {
       key: 'now_canon_medical_systems_brazil_full_time_contract_software_developer_front_end',
       when: 'Now',
-      position: 'Software Engineering Consultant',
+      position: 'Senior Frontend Developer',
       company: 'Canon Medical Systems — Brazil • Full-time contract',
     },
     {
       key: '2021_grupo_sbf_nike_brazil_centauro_brazil_full_time_permanent_software_developer_front_end',
       when: '2021',
-      position: 'Software Engineer',
+      position: 'Frontend Developer',
       company:
         'Grupo SBF | Nike Brazil & Centauro — Brazil • Full-time permanent',
     },
     {
       key: '2020_encora_inc_brazil_full_time_permanent_software_developer_front_end',
       when: '2020',
-      position: 'Mid-Level Software Engineer',
+      position: 'Frontend Developer',
       company: 'Encora Inc. — Brazil • Full-time permanent',
     },
     {
       key: '2020_zup_innovation_itau_bank_brazil_full_time_permanent_software_developer_front_end',
       when: '2020',
-      position: 'Mid-Level Software Engineer',
+      position: 'Frontend Developer',
       company: 'Zup Innovation (Itaú Bank) — Brazil • Full-time permanent',
     },
     {
       key: '2019_venturus_brazil_full_time_permanent_software_developer_full_stack',
       when: '2019',
-      position: 'Full Stack Engineer (MEAN Stack)',
+      position: 'Full Stack Developer (MEAN Stack)',
       company: 'Venturus — Brazil • Full-time permanent',
     },
     {
       key: '2018_mb_labs_brazil_full_time_contract_software_developer_full_stack',
       when: '2018',
-      position: 'Full Stack Engineer',
+      position: 'Full Stack Developer',
       company: 'MB Labs — Brazil • Full-time contract',
     },
   ];

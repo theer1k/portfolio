@@ -72,8 +72,8 @@ export const Whoami = () => {
   );
 
   const description = [
-    `I am a professional with experience in frontend, mobile, and backend, having worked as a software engineer for the past 5 years. I have contributed from kick-start to large-scale projects catering to thousands of users for esteemed companies like Nike and Centauro, increasing the conversion rate and revenue.`,
-    `I'd be delighted to connect and explore potential opportunities if you're seeking a passionate and proficient software developer who can deliver robust and efficient solutions. <p class="mb-6"></p> Let's create exceptional software together!`,
+    `I am a professional with a robust background in frontend development and 5 years of experience as a software developer. I have had the opportunity to work on various high-impact projects across multiple industries, including healthcare, retail, and technology. Currently, I am a Senior Frontend Developer at Canon Medical Systems Brazil, where I work remotely.`,
+    `I'd be delighted to connect and explore potential opportunities if you're seeking a passionate and proficient software developer who can deliver robust and efficient solutions. Let's create exceptional software together!`,
   ];
 
   const { ref: refDescriptionDesktop, inView: inViewDescriptionDesktop } =
